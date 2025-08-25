@@ -61,6 +61,77 @@
             50% { transform: translateY(-20px); }
         }
     </style>
+     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Cairo', sans-serif;
+        }
+        
+        .feature-card {
+            transition: all 0.3s ease;
+            transform: translateY(0);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .icon-container {
+            background: linear-gradient(135deg, #3498db, #2ecc71);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover .icon-container {
+            transform: scale(1.1);
+            background: linear-gradient(135deg, #2ecc71, #3498db);
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        @keyframes ripple {
+            to {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+    </style>
 </head>
 <body class="font-cairo bg-gray-50">
     <!-- Navigation Bar -->
@@ -69,11 +140,11 @@
             <div class="flex justify-between items-center py-4">
                 <!-- Logo -->
                 <div class="flex items-center space-x-3 space-x-reverse">
-                    <div class="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center">
-                        <i class="fas fa-snowflake text-white text-xl"></i>
+                    <div class="w-12 h-12  rounded-full flex items-center justify-center">
+                       <img src="assets/images/السرعة والحلول مكيفات.png" alt="">
                     </div>
                     <div>
-                        <h1 class="text-2xl font-bold text-primary">حلول السرعة</h1>
+                        <h1 class="text-2xl font-bold  text-[#357bcc]">حلول السرعة</h1>
                         <p class="text-sm text-gray-600">خدمات المكيفات الاحترافية</p>
                     </div>
                 </div>
@@ -84,7 +155,7 @@
                     <a href="#about" class="text-gray-700 hover:text-primary transition-colors font-semibold">من نحن</a>
                     <a href="#services" class="text-gray-700 hover:text-primary transition-colors font-semibold">خدماتنا</a>
                     <a href="#contact" class="text-gray-700 hover:text-primary transition-colors font-semibold">اتصل بنا</a>
-                    <a href="tel:0505779018" class="bg-[#1f2a38] text-white px-6 py-2 rounded-full hover:shadow-lg transition-all duration-300 font-semibold">
+                    <a href="tel:0505779018" class="bg-[#357bcc] text-white px-6 py-2 rounded-full hover:shadow-lg transition-all duration-300 font-semibold">
                         <i class="fas fa-phone ml-2"></i>
                         اتصل الآن
                     </a>
@@ -103,7 +174,7 @@
                     <a href="#about" class="block text-gray-700 hover:text-primary transition-colors font-semibold">من نحن</a>
                     <a href="#services" class="block text-gray-700 hover:text-primary transition-colors font-semibold">خدماتنا</a>
                     <a href="#contact" class="block text-gray-700 hover:text-primary transition-colors font-semibold">اتصل بنا</a>
-                    <a href="tel:0505779018" class="block bg-gradient-to-r from-primary to-secondary text-white px-6 py-2 rounded-full text-center font-semibold">
+                    <a href="tel:0505779018" class="block bg-[#357bcc] text-white px-6 py-2 rounded-full text-center font-semibold">
                         <i class="fas fa-phone ml-2"></i>
                         اتصل الآن
                     </a>
@@ -113,11 +184,11 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden mt-5">
         <!-- Background Image with Overlay -->
         <div class="absolute inset-0 bg-cover bg-center bg-no-repeat hero-overlay" style="background-image: url('assets/images/hero-bg.jpg');">
         </div>
-        <div class="absolute inset-0 bg-black/50"></div>
+        <div class="absolute inset-0 bg-black/60"></div>
 
         <!-- Animated Background Elements -->
         <div class="absolute inset-0">
@@ -130,7 +201,7 @@
         <div class="relative z-10 container mx-auto px-4 text-center text-white">
             <div class="animate-fade-in">
                 <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight">
-                    <span class="block">حلول السرعة</span>
+                    <span class="block ">حلول السرعة</span>
                     <span class="block text-secondary text-4xl md:text-5xl mt-2">لخدمات المكيفات</span>
                 </h1>
                 
@@ -156,11 +227,11 @@
 
                 <!-- CTA Buttons -->
                 <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <a href="tel:0505779018" class="bg-secondary hover:bg-yellow-600 text-white px-8 py-4 rounded-full text-lg font-bold transition-all duration-300 hover:shadow-2xl hover:scale-105 flex items-center">
+                    <a href="tel:0505779018" class="bg-[#357bcc] hover:bg-[#358bcc] text-white px-8 py-4 rounded-full text-lg font-bold transition-all duration-300 hover:shadow-2xl hover:scale-105 flex items-center">
                         <i class="fas fa-phone ml-3 text-xl"></i>
                         اتصل الآن للطوارئ
                     </a>
-                    <a href="https://wa.me/966500000000" class="bg-accent hover:bg-green-600 text-white px-8 py-4 rounded-full text-lg font-bold transition-all duration-300 hover:shadow-2xl hover:scale-105 flex items-center">
+                    <a href="https://wa.me/966500000000" class="bg-white hover:bg-[#357bcc] hover:text-white  text-black px-8 py-4 rounded-full text-lg font-bold transition-all duration-300 hover:shadow-2xl hover:scale-105 flex items-center">
                         <i class="fab fa-whatsapp ml-3 text-xl"></i>
                         واتساب
                     </a>
@@ -179,7 +250,7 @@
         <div class="container mx-auto px-4">
             <!-- Section Header -->
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-black text-dark mb-6">من نحن</h2>
+                <h2 class="text-4xl md:text-5xl font-black text-[#357bcc] mb-6">من نحن</h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
                     شركة حلول السرعة هي الرائدة في مجال خدمات المكيفات في المملكة العربية السعودية، نقدم حلولاً شاملة ومتطورة لجميع احتياجاتكم
                 </p>
@@ -213,7 +284,7 @@
                 <!-- Image -->
                 <div class="relative">
                     <img src="assets/images/technician.jpg" alt="فني محترف" class="rounded-2xl shadow-2xl w-full h-96 object-cover">
-                    <div class="absolute -bottom-6 -right-6 bg-primary text-white p-6 rounded-2xl shadow-xl">
+                    <div class="absolute -bottom-6 -right-6 bg-[#00a0cc] text-white p-6 rounded-2xl shadow-xl">
                         <i class="fas fa-certificate text-3xl mb-2"></i>
                         <div class="font-bold">معتمدون رسمياً</div>
                     </div>
@@ -223,7 +294,7 @@
             <!-- Services Cards -->
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Service Card 1 -->
-                <div class="card-hover bg-gradient-to-br from-primary to-blue-600 text-white p-8 rounded-2xl shadow-lg">
+                <div class="card-hover bg-[#36326b] to-blue-600 text-white p-8 rounded-2xl shadow-lg">
                     <div class="text-center">
                         <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
                             <i class="fas fa-snowflake text-3xl"></i>
@@ -236,7 +307,7 @@
                 </div>
 
                 <!-- Service Card 2 -->
-                <div class="card-hover bg-gradient-to-br from-secondary to-yellow-600 text-white p-8 rounded-2xl shadow-lg">
+                <div class="card-hover bg-[#36326b] to-yellow-600 text-white p-8 rounded-2xl shadow-lg">
                     <div class="text-center">
                         <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
                             <i class="fas fa-tools text-3xl"></i>
@@ -249,7 +320,7 @@
                 </div>
 
                 <!-- Service Card 3 -->
-                <div class="card-hover bg-gradient-to-br from-accent to-green-600 text-white p-8 rounded-2xl shadow-lg">
+                <div class="card-hover bg-[#36326b] text-white p-8 rounded-2xl shadow-lg">
                     <div class="text-center">
                         <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
                             <i class="fas fa-wrench text-3xl"></i>
@@ -275,7 +346,7 @@
                 <div class="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-6 floating">
                     <i class="fas fa-snowflake text-3xl text-primary"></i>
                 </div>
-                <h2 class="text-4xl md:text-5xl font-black text-dark mb-6">خدماتنا المتميزة</h2>
+                <h2 class="text-4xl md:text-5xl font-black mb-6 text-[#357bcc]">خدماتنا المتميزة</h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
                     نقدم مجموعة شاملة من الخدمات المتخصصة في مجال المكيفات بأعلى معايير الجودة والاحترافية
                 </p>
@@ -289,14 +360,14 @@
                 <div class="service-card fade-in-up stagger-1 bg-white rounded-3xl p-8 shadow-lg border border-gray-100 group  transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2x">
                     <div class="text-center">
                         <img src="assets/images/Artboard 2.png" alt="صيانة مكيفات" class="w-full h-auto rounded-2xl mb-6 shadow-md">
-                        <div class="service-icon w-20 h-20 bg-gradient-to-br from-primary to-blue-600 rounded-2xl flex items-center justify-center mx-auto -mt-10 mb-6 shadow-lg relative z-10">
+                        <div class="service-icon w-20 h-20 bg-[#357bcc] rounded-2xl flex items-center justify-center mx-auto -mt-10 mb-6 shadow-lg relative z-10">
                             <i class="fas fa-wrench text-3xl text-white"></i>
                         </div>
-                        <h3 class="text-2xl font-bold text-dark mb-4 group-hover:text-primary transition-colors">صيانة مكيفات</h3>
+                        <h3 class="text-2xl font-bold text-dark mb-4 group-hover:text-[#357bcc] transition-colors">صيانة مكيفات</h3>
                         <p class="text-gray-600 leading-relaxed mb-6">
                             نقدم خدمات صيانة شاملة ودورية لجميع أنواع المكيفات، بما في ذلك الفحص الدقيق، تنظيف الفلاتر، فحص مستوى الفريون، وإصلاح الأعطال بكفاءة عالية لضمان أداء مثالي وطول عمر جهازك.
                         </p>
-                        <div class="flex items-center justify-center space-x-2 space-x-reverse text-sm text-primary font-semibold">
+                        <div class="flex items-center justify-center space-x-2 space-x-reverse text-sm text-[#357bcc] font-semibold">
                             <span>اعرف المزيد</span>
                             <i class="fas fa-arrow-left transform group-hover:translate-x-1 transition-transform"></i>
                         </div>
@@ -307,14 +378,14 @@
                 <div class="service-card fade-in-up stagger-2 bg-white rounded-3xl p-8 shadow-lg border border-gray-100 group transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2x">
                     <div class="text-center">
                         <img src="assets/images/Artboard 4.png" alt="بيع وتركيب مكيفات" class="w-full h-auto rounded-2xl mb-6 shadow-md">
-                        <div class="service-icon w-20 h-20 bg-gradient-to-br from-secondary to-yellow-600 rounded-2xl flex items-center justify-center mx-auto -mt-10 mb-6 shadow-lg relative z-10">
+                        <div class="service-icon w-20 h-20 bg-[#357bcc] rounded-2xl flex items-center justify-center mx-auto -mt-10 mb-6 shadow-lg relative z-10">
                             <i class="fas fa-box-open text-3xl text-white"></i>
                         </div>
-                        <h3 class="text-2xl font-bold text-dark mb-4 group-hover:text-secondary transition-colors">بيع وتركيب مكيفات</h3>
+                        <h3 class="text-2xl font-bold text-dark mb-4 group-hover:text-[#357bcc] transition-colors">بيع وتركيب مكيفات</h3>
                         <p class="text-gray-600 leading-relaxed mb-6">
                             نوفر أحدث موديلات المكيفات من أفضل الماركات العالمية، مع خدمات تركيب احترافية تضمن الأداء الأمثل والتبريد الفعال. نقدم استشارات مجانية لاختيار المكيف الأنسب لاحتياجاتك وميزانيتك.
                         </p>
-                        <div class="flex items-center justify-center space-x-2 space-x-reverse text-sm text-secondary font-semibold">
+                        <div class="flex items-center justify-center space-x-2 space-x-reverse text-sm text-[#357bcc] font-semibold">
                             <span>اعرف المزيد</span>
                             <i class="fas fa-arrow-left transform group-hover:translate-x-1 transition-transform"></i>
                         </div>
@@ -325,14 +396,14 @@
                 <div class="service-card fade-in-up stagger-3 bg-white rounded-3xl p-8 shadow-lg border border-gray-100 group transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2x">
                     <div class="text-center">
                         <img src="assets/images/Artboard 8.png" alt="شحن فريون" class="w-full h-auto rounded-2xl mb-6 shadow-md">
-                        <div class="service-icon w-20 h-20 bg-gradient-to-br from-accent to-green-600 rounded-2xl flex items-center justify-center mx-auto -mt-10 mb-6 shadow-lg relative z-10">
+                        <div class="service-icon w-20 h-20 bg-[#357bcc] rounded-2xl flex items-center justify-center mx-auto -mt-10 mb-6 shadow-lg relative z-10">
                             <i class="fas fa-gas-pump text-3xl text-white"></i>
                         </div>
-                        <h3 class="text-2xl font-bold text-dark mb-4 group-hover:text-accent transition-colors">شحن فريون وقطع غيار</h3>
+                        <h3 class="text-2xl font-bold text-dark mb-4 group-hover:text-[#357bcc] transition-colors">شحن فريون وقطع غيار</h3>
                         <p class="text-gray-600 leading-relaxed mb-6">
                             نقوم بشحن غاز الفريون الأصلي وتبديل جميع قطع الغيار التالفة بأخرى أصلية ومضمونة، لضمان استعادة كفاءة التبريد القصوى للمكيف وتجنب الأعطال المستقبلية.
                         </p>
-                        <div class="flex items-center justify-center space-x-2 space-x-reverse text-sm text-accent font-semibold">
+                        <div class="flex items-center justify-center space-x-2 space-x-reverse text-sm text-[#357bcc] font-semibold">
                             <span>اعرف المزيد</span>
                             <i class="fas fa-arrow-left transform group-hover:translate-x-1 transition-transform"></i>
                         </div>
@@ -343,14 +414,14 @@
                 <div class="service-card fade-in-up stagger-4 bg-white rounded-3xl p-8 shadow-lg border border-gray-100 group transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2x">
                     <div class="text-center">
                         <img src="assets/images/Artboard 11.png" alt="تمديد نحاس" class="w-full h-auto rounded-2xl mb-6 shadow-md">
-                        <div class="service-icon w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-700 rounded-2xl flex items-center justify-center mx-auto -mt-10 mb-6 shadow-lg relative z-10">
+                        <div class="service-icon w-20 h-20 bg-[#06d1ce] rounded-2xl flex items-center justify-center mx-auto -mt-10 mb-6 shadow-lg relative z-10">
                             <i class="fas fa-hard-hat text-3xl text-white"></i>
                         </div>
-                        <h3 class="text-2xl font-bold text-dark mb-4 group-hover:text-purple-600 transition-colors">تمديد النحاس والعوازل</h3>
+                        <h3 class="text-2xl font-bold text-dark mb-4 group-hover:text-[#06d1ce] transition-colors">تمديد النحاس والعوازل</h3>
                         <p class="text-gray-600 leading-relaxed mb-6">
                             نقدم خدمات تمديد أنابيب النحاس عالية الجودة وتركيب العوازل الحرارية والصوتية، لضمان كفاءة نقل التبريد وتقليل استهلاك الطاقة والحفاظ على هدوء المكان.
                         </p>
-                        <div class="flex items-center justify-center space-x-2 space-x-reverse text-sm text-purple-600 font-semibold">
+                        <div class="flex items-center justify-center space-x-2 space-x-reverse text-sm text-[#06d1ce] font-semibold">
                             <span>اعرف المزيد</span>
                             <i class="fas fa-arrow-left transform group-hover:translate-x-1 transition-transform"></i>
                         </div>
@@ -361,14 +432,14 @@
                 <div class="service-card fade-in-up stagger-5 bg-white rounded-3xl p-8 shadow-lg border border-gray-100 group md:col-span-2 lg:col-span-1 transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2x">
                     <div class="text-center">
                         <img src="assets/images/Artboard 10.png" alt="تنظيف مكيفات" class="w-full h-auto rounded-2xl mb-6 shadow-md">
-                        <div class="service-icon w-20 h-20 bg-gradient-to-br from-teal-500 to-teal-700 rounded-2xl flex items-center justify-center mx-auto -mt-10 mb-6 shadow-lg relative z-10">
+                        <div class="service-icon w-20 h-20 bg-[#06d1ce] rounded-2xl flex items-center justify-center mx-auto -mt-10 mb-6 shadow-lg relative z-10">
                             <i class="fas fa-broom text-3xl text-white"></i>
                         </div>
-                        <h3 class="text-2xl font-bold text-dark mb-4 group-hover:text-teal-600 transition-colors">تنظيف وتعقيم المكيفات</h3>
+                        <h3 class="text-2xl font-bold text-dark mb-4 group-hover:text-[#06d1ce] transition-colors">تنظيف وتعقيم المكيفات</h3>
                         <p class="text-gray-600 leading-relaxed mb-6">
                             تنظيف عميق وتعقيم شامل للمكيفات باستخدام مواد آمنة وفعالة، لإزالة الأتربة والبكتيريا والفطريات، مما يضمن هواءً نقيًا وصحيًا ويحسن من كفاءة التبريد.
                         </p>
-                        <div class="flex items-center justify-center space-x-2 space-x-reverse text-sm text-teal-600 font-semibold">
+                        <div class="flex items-center justify-center space-x-2 space-x-reverse text-sm text-[#06d1ce] font-semibold">
                             <span>اعرف المزيد</span>
                             <i class="fas fa-arrow-left transform group-hover:translate-x-1 transition-transform"></i>
                         </div>
@@ -378,7 +449,7 @@
 
             <!-- Call to Action -->
             <div class="text-center fade-in-up stagger-5">
-                <div class="bg-[#1f2a38] rounded-3xl p-8 md:p-12 text-white shadow-2xl">
+                <div class="bg-[#36326b] rounded-3xl p-8 md:p-12 text-white shadow-2xl">
                     <div class="max-w-3xl mx-auto">
                         <h3 class="text-3xl md:text-4xl font-bold mb-4 text-[#f59f0a]">هل تحتاج لخدماتنا؟</h3>
                         <p class="text-xl mb-8 opacity-90">
@@ -480,7 +551,215 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 </script>
 
+<!--  -->
+    <section class="py-16 gradient-bg">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <!-- Section Header -->
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold text-gradient mb-6">
+                    لماذا تختارنا؟
+                </h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                    نحن نقدم أفضل الخدمات التقنية مع ضمان الجودة والاحترافية في كل ما نقوم به
+                </p>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-green-500 mx-auto mt-6 rounded-full"></div>
+            </div>
 
+            <!-- Features Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Feature 1: Comprehensive Guarantee -->
+                <div class="feature-card bg-white rounded-2xl p-8 text-center shadow-lg border border-gray-100 fade-in" style="animation-delay: 0.1s">
+                    <div class="icon-container w-20 h-20 mx-auto mb-6 rounded-full flex items-center justify-center">
+                        <i class="fas fa-shield-alt text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">ضمان شامل</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        نوفر ضمان شامل على جميع خدماتنا مع التزام كامل بالجودة والموثوقية
+                    </p>
+                    <div class="mt-6 flex justify-center">
+                        <div class="w-12 h-1 bg-gradient-to-r from-blue-500 to-green-500 rounded-full"></div>
+                    </div>
+                </div>
+
+                <!-- Feature 2: Professional Technicians -->
+                <div class="feature-card bg-white rounded-2xl p-8 text-center shadow-lg border border-gray-100 fade-in" style="animation-delay: 0.2s">
+                    <div class="icon-container w-20 h-20 mx-auto mb-6 rounded-full flex items-center justify-center">
+                        <i class="fas fa-user-cog text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">فنيون محترفون</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        فريق من الفنيين المحترفين والمدربين على أعلى مستوى لضمان أفضل النتائج
+                    </p>
+                    <div class="mt-6 flex justify-center">
+                        <div class="w-12 h-1 bg-gradient-to-r from-blue-500 to-green-500 rounded-full"></div>
+                    </div>
+                </div>
+
+                <!-- Feature 3: 24/7 Fast Service -->
+                <div class="feature-card bg-white rounded-2xl p-8 text-center shadow-lg border border-gray-100 fade-in" style="animation-delay: 0.3s">
+                    <div class="icon-container w-20 h-20 mx-auto mb-6 rounded-full flex items-center justify-center">
+                        <i class="fas fa-clock text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">خدمة سريعة 24/7</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        خدمة متاحة على مدار الساعة طوال أيام الأسبوع مع استجابة سريعة لجميع الطلبات
+                    </p>
+                    <div class="mt-6 flex justify-center">
+                        <div class="w-12 h-1 bg-gradient-to-r from-blue-500 to-green-500 rounded-full"></div>
+                    </div>
+                </div>
+
+                <!-- Feature 4: Original Spare Parts -->
+                <div class="feature-card bg-white rounded-2xl p-8 text-center shadow-lg border border-gray-100 fade-in" style="animation-delay: 0.4s">
+                    <div class="icon-container w-20 h-20 mx-auto mb-6 rounded-full flex items-center justify-center">
+                        <i class="fas fa-cogs text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">قطع غيار أصلية</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        نستخدم فقط قطع الغيار الأصلية والمعتمدة لضمان أطول عمر افتراضي للأجهزة
+                    </p>
+                    <div class="mt-6 flex justify-center">
+                        <div class="w-12 h-1 bg-gradient-to-r from-blue-500 to-green-500 rounded-full"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="text-center mt-16 fade-in" style="animation-delay: 0.5s">
+                <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 max-w-2xl mx-auto">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">جاهز للبدء؟</h3>
+                    <p class="text-gray-600 mb-6">تواصل معنا الآن واحصل على أفضل الخدمات التقنية</p>
+                    <button class="bg-gradient-to-r from-blue-500 to-green-500 text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105 pulse-animation">
+                        اتصل بنا الآن
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add hover effects for feature cards
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Add click animation for CTA button
+        document.querySelector('button').addEventListener('click', function() {
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1.05)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 150);
+            }, 150);
+        });
+
+        // Parallax effect for icons
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const icons = document.querySelectorAll('.icon-container');
+            
+            icons.forEach((icon, index) => {
+                const speed = 0.5 + (index * 0.1);
+                icon.style.transform = `translateY(${scrolled * speed * 0.1}px) scale(1)`;
+            });
+        });
+
+        // Counter animation for numbers
+        function animateCounters() {
+            const counters = document.querySelectorAll('.counter');
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const increment = target / 100;
+                let current = 0;
+                
+                const updateCounter = () => {
+                    if (current < target) {
+                        current += increment;
+                        counter.textContent = Math.ceil(current);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target;
+                    }
+                };
+                updateCounter();
+            });
+        }
+
+        // Floating animation for cards
+        function addFloatingAnimation() {
+            const cards = document.querySelectorAll('.feature-card');
+            cards.forEach((card, index) => {
+                setInterval(() => {
+                    card.style.transform = `translateY(${Math.sin(Date.now() * 0.001 + index) * 3}px)`;
+                }, 50);
+            });
+        }
+
+        // Initialize animations when page loads
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                addFloatingAnimation();
+            }, 1000);
+        });
+
+        // Add ripple effect to cards
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                const ripple = document.createElement('div');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.cssText = `
+                    position: absolute;
+                    width: ${size}px;
+                    height: ${size}px;
+                    left: ${x}px;
+                    top: ${y}px;
+                    background: radial-gradient(circle, rgba(52, 152, 219, 0.3) 0%, transparent 70%);
+                    border-radius: 50%;
+                    transform: scale(0);
+                    animation: ripple 0.6s ease-out;
+                    pointer-events: none;
+                `;
+                
+                this.style.position = 'relative';
+                this.style.overflow = 'hidden';
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+    </script>
 
 
 
@@ -507,18 +786,19 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                         الشركة الرائدة في مجال خدمات المكيفات في المملكة العربية السعودية. نقدم حلولاً شاملة ومتطورة بأعلى معايير الجودة.
                     </p>
                     <div class="flex space-x-4 space-x-reverse">
-                        <a href="#" class="w-10 h-10 bg-primary rounded-full flex items-center justify-center hover:bg-secondary transition-colors">
+                        <a href="https://www.facebook.com/people/%D8%A7%D9%84%D8%B3%D8%B1%D8%B9%D8%A9-%D9%88%D8%A7%D9%84%D8%AD%D9%84%D9%88%D9%84-%D9%84%D9%84%D8%B5%D9%8A%D8%A7%D9%86%D8%A9-%D9%88%D8%A7%D9%84%D8%AA%D8%B4%D8%BA%D9%8A%D9%84/61575425812292/" class="w-10 h-10 bg-primary rounded-full flex items-center justify-center hover:bg-secondary transition-colors">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 bg-primary rounded-full flex items-center justify-center hover:bg-secondary transition-colors">
+                        <a href="https://x.com/SPEEDSOL77" class="w-10 h-10 bg-primary rounded-full flex items-center justify-center hover:bg-secondary transition-colors">
                             <i class="fab fa-twitter"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 bg-primary rounded-full flex items-center justify-center hover:bg-secondary transition-colors">
+                        <a href="https://www.instagram.com/speedsolution_airconditions77/" class="w-10 h-10 bg-primary rounded-full flex items-center justify-center hover:bg-secondary transition-colors">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 bg-primary rounded-full flex items-center justify-center hover:bg-secondary transition-colors">
-                            <i class="fab fa-linkedin-in"></i>
+                       <a href="https://www.tiktok.com/@speedsolution.aircondi77" class="w-10 h-10 bg-primary rounded-full flex items-center justify-center hover:bg-secondary transition-colors">
+                        <i class="fab fa-tiktok text-white text-lg"></i>
                         </a>
+
                     </div>
                 </div>
 
